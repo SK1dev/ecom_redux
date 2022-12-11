@@ -7,8 +7,12 @@
 @import 'components/button/button.styles.scss';
 @import 'components/sign-in-form/sign-in-form.styles.scss';
 @import 'routes/authentication/authentication.styles.scss';
+@import 'routes/shop/shop.styles.scss';
+@import 'components/product-card/product-card.styles.scss';
 @import 'index.scss';
 
 // #9B1A21 deep red
 // #AC9270 gold
 // font-family: 'PostGrotesk-Book', sans-serif; - description font
+
+// WATCH SASS COMMAND sass --watch src/main.scss:src/main.css

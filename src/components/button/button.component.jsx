@@ -1,4 +1,4 @@
-import './button.styles.scss'
+import "./button.styles.scss";
 
 export const BUTTON_TYPE_CLASSES = {
   google: "google-sign-in",
@@ -16,4 +16,4 @@ const Button = ({ children, buttonType, ...otherProps }) => {
   );
 };
 
-export default Button
+export default Button;

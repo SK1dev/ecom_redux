@@ -57,12 +57,14 @@
   font-weight: bold;
   margin: 15px 0 0;
   font-size: 32px;
+  font-family: "Playfair Display", serif;
   color: #4a4a4a;
 }
 .category-container .category-body-container p {
   font-weight: lighter;
-  font-size: 15px;
-  font-family: "Roboto";
+  font-size: 12px;
+  font-family: "PostGrotesk-Medium", sans-serif;
+  text-transform: uppercase;
 }
 
 .directory-container {
@@ -72,16 +74,206 @@
   justify-content: space-between;
 }
 
-body {
-  margin: 0;
-  font-family: "Rouge Script", "Roboto";
-  font-family: "MyWebFont", Fallback, sans-serif;
+.navigation {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.navigation .logo-container {
+  height: 100%;
+  width: 70px;
+  padding: 25px;
+}
+.navigation .nav-links-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.navigation .nav-links-container .nav-link {
+  padding: 10px 15px;
+  cursor: pointer;
 }
 
-@font-face {
-  font-family: "Bauer Bodoni Roman";
-  src: url("./assets/Bauer Bodoni Roman/") format("opentype");
-  font-style: normal;
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+}
+.sign-up-container h2 {
+  margin: 10px 0;
+}
+
+.group {
+  position: relative;
+  margin: 45px 0;
+}
+.group .form-input {
+  background: none;
+  background-color: white;
+  color: grey;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid grey;
+  margin: 25px 0;
+}
+.group .form-input:focus {
+  outline: none;
+}
+.group .form-input:focus ~ .form-input-label {
+  top: -14px;
+  font-size: 12px;
+  color: black;
+}
+.group input[type=password] {
+  letter-spacing: 0.3em;
+}
+.group .form-input-label {
+  color: grey;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 300ms ease all;
+}
+.group .form-input-label.shrink {
+  top: -14px;
+  font-size: 12px;
+  color: black;
+}
+
+.button-container {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed";
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.button-container:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+.button-container.google-sign-in {
+  background-color: #4285f4;
+  color: white;
+}
+.button-container.google-sign-in:hover {
+  background-color: #357ae8;
+  border: none;
+}
+.button-container.inverted {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+.button-container.inverted:hover {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.sign-in-container {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+}
+.sign-in-container h2 {
+  margin: 10px 0;
+}
+.sign-in-container .buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.authentication-container {
+  display: flex;
+  width: 900px;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  row-gap: 50px;
+}
+
+.product-card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  align-items: center;
+  position: relative;
+}
+.product-card-container img {
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+.product-card-container button {
+  width: 80%;
+  opacity: 0.7;
+  position: absolute;
+  top: 255px;
+  display: none;
+}
+.product-card-container:hover img {
+  opacity: 0.8;
+}
+.product-card-container:hover button {
+  opacity: 0.85;
+  display: flex;
+}
+.product-card-container .footer {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+.product-card-container .footer .name {
+  width: 90%;
+  margin-bottom: 15px;
+}
+.product-card-container .footer .price {
+  width: 10%;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=main.css.map */

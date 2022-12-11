@@ -1,26 +1,40 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+
+import { UserContext } from '../../contexts/user.context';
 import logo from '../../assets/logo.jpg'
-import './navigation.styles.scss'
+import { signOutUser } from '../../utils/firebase/firebase.utils';
+
+import './navigation.styles.scss';
+
 const Navigation = () => {
-    return (
-        <Fragment>
-            <div className='navigation'>
-                <Link className='logo-container' to='\'>
+  const { currentUser } = useContext(UserContext);
+
+  return (
+    <Fragment>
+      <div className='navigation'>
+      <Link className='logo-container' to='\'>
                     <div><img src={logo} width='150px' alt='Logo' /></div>
                 </Link>
-                <div className='nav-links-container'>
-                    <Link className='nav-link' to='/shop' >
-                        SHOP
-                    </Link>
-                    <Link className='nav-link' to='/auth'>
-                        SIGN IN
-                    </Link>
-                </div>
-            </div>
-            <Outlet />
-        </Fragment>
-    )
-}
+        <div className='nav-links-container'>
+          <Link className='nav-link' to='/shop'>
+            SHOP
+          </Link>
 
-export default Navigation
+          {currentUser ? (
+            <span className='nav-link' onClick={signOutUser}>
+              SIGN OUT
+            </span>
+          ) : (
+            <Link className='nav-link' to='/auth'>
+              SIGN IN
+            </Link>
+          )}
+        </div>
+      </div>
+      <Outlet />
+    </Fragment>
+  );
+};
+
+export default Navigation;
