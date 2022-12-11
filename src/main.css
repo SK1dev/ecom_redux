@@ -57,14 +57,12 @@
   font-weight: bold;
   margin: 15px 0 0;
   font-size: 32px;
-  font-family: "Playfair Display", serif;
   color: #4a4a4a;
 }
 .category-container .category-body-container p {
   font-weight: lighter;
-  font-size: 12px;
-  font-family: "PostGrotesk-Medium", sans-serif;
-  text-transform: uppercase;
+  font-size: 15px;
+  font-family: "Roboto";
 }
 
 .directory-container {
@@ -74,32 +72,16 @@
   justify-content: space-between;
 }
 
-.navigation {
-  height: 70px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
-.navigation .logo-container {
-  height: 100%;
-  width: 70px;
-  padding: 25px;
-}
-.navigation .nav-links-container {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.navigation .nav-links-container .nav-link {
-  padding: 10px 15px;
-  cursor: pointer;
-}
-
 body {
   margin: 0;
+  font-family: "Rouge Script", "Roboto";
+  font-family: "MyWebFont", Fallback, sans-serif;
+}
+
+@font-face {
+  font-family: "Bauer Bodoni Roman";
+  src: url("./assets/Bauer Bodoni Roman/") format("opentype");
+  font-style: normal;
 }
 
 /*# sourceMappingURL=main.css.map */
