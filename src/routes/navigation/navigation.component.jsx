@@ -1,6 +1,9 @@
 import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
+import CartIcon from '../../components/cart-icon/cart-icon.component';
+import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
+
 import { UserContext } from '../../contexts/user.context';
 import logo from '../../assets/logo.jpg'
 import { signOutUser } from '../../utils/firebase/firebase.utils';
@@ -13,9 +16,9 @@ const Navigation = () => {
   return (
     <Fragment>
       <div className='navigation'>
-      <Link className='logo-container' to='\'>
-                    <div><img src={logo} width='150px' alt='Logo' /></div>
-                </Link>
+        <Link className='logo-container' to='\'>
+          <div><img src={logo} width='150px' alt='Logo' /></div>
+        </Link>
         <div className='nav-links-container'>
           <Link className='nav-link' to='/shop'>
             SHOP
@@ -30,7 +33,9 @@ const Navigation = () => {
               SIGN IN
             </Link>
           )}
+          <CartIcon />
         </div>
+        <CartDropdown />
       </div>
       <Outlet />
     </Fragment>
