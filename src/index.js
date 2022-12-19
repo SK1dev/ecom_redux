@@ -10,8 +10,9 @@ import { store, persistor } from './store/store';
 import { stripePromise } from './utils/stripe/stripe.utils';
 import * as registerServiceWorker from './serviceWorkerRegistration';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const rootElement = document.getElementById('root');
+
+render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -23,4 +24,7 @@ root.render(
       </PersistGate>
     </Provider>
   </React.StrictMode>,
+  rootElement
 );
+
+registerServiceWorker.register();
